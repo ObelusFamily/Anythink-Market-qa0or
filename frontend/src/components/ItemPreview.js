@@ -28,9 +28,7 @@ const ItemPreview = (props) => {
       props.favorite(item.slug);
     }
   };
-/* src={
-  item.image === "" ? require("../imgs/placeholder.png") : item.image
-} */
+
   return (
     <div
       className="card bg-dark border-light p-3"
