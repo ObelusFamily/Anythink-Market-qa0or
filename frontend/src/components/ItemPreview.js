@@ -28,7 +28,9 @@ const ItemPreview = (props) => {
       props.favorite(item.slug);
     }
   };
-
+/* src={
+  item.image === "" ? require("../imgs/placeholder.png") : item.image
+} */
   return (
     <div
       className="card bg-dark border-light p-3"
@@ -36,9 +38,7 @@ const ItemPreview = (props) => {
     >
       <img
         alt="item"
-        src={
-          item.image === "" ? require("../imgs/placeholder.png") : item.image
-        }
+        src={require("../imgs/placeholder.png")}
         className="card-img-top item-img"
         style={{ borderRadius: "20px" }}
       />
