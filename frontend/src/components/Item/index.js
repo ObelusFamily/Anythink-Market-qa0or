@@ -4,6 +4,7 @@ import React from "react";
 import agent from "../../agent";
 import { connect } from "react-redux";
 import marked from "marked";
+
 import {
   ITEM_PAGE_LOADED,
   ITEM_PAGE_UNLOADED,
@@ -28,35 +29,32 @@ class Item extends React.Component {
       ])
     );
   }
-
   componentWillUnmount() {
     this.props.onUnload();
   }
-
   render() {
     if (!this.props.item) {
       return null;
     }
-
     const markup = {
       __html: marked(this.props.item.description, { sanitize: true }),
     };
     const canModify =
       this.props.currentUser &&
       this.props.currentUser.username === this.props.item.seller.username;
+      console.log('THIS IS THE TYPE OF '+(this.props.item.image).toString());
     return (
       <div className="container page">
         <div className="text-dark">
           <div className="row bg-white p-4">
             <div className="col-6">
               <img
-                src={this.props.item.image}
+                src={this.props.item.image == '' ?  require('../../imgs/placeholder.png'):this.props.item.image }
                 alt={this.props.item.title}
                 className="item-img"
                 style={{ height: "500px", width: "100%", borderRadius: "6px" }}
               />
             </div>
-
             <div className="col-6">
               <h1>{this.props.item.title}</h1>
               <ItemMeta item={this.props.item} canModify={canModify} />
