@@ -30,11 +30,8 @@ const FollowUserButton = (props) => {
   }
 
   let classes = "btn btn-sm action-btn";
-  if (props.user.following) {
-    classes += " btn-secondary";
-  } else {
-    classes += " btn-outline-secondary";
-  }
+  classes += " btn-secondary";
+ 
 
   const handleClick = (ev) => {
     ev.preventDefault();
@@ -50,6 +47,7 @@ const FollowUserButton = (props) => {
       <i className="ion-plus-round"></i>
       &nbsp;
       {props.user.following ? "Unfollow" : "Follow"} {props.user.username}
+      <h2>HOLAAAAAA</h2>
     </button>
   );
 };
