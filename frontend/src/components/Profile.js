@@ -30,6 +30,7 @@ const FollowUserButton = (props) => {
   }
 
   let classes = "btn btn-sm action-btn";
+  classes += " btn-secondary";
   if (props.user.following) {
     classes += " btn-secondary";
   } else {
@@ -50,6 +51,7 @@ const FollowUserButton = (props) => {
       <i className="ion-plus-round"></i>
       &nbsp;
       {props.user.following ? "Unfollow" : "Follow"} {props.user.username}
+      <h2>HOLAAAAAA</h2>
     </button>
   );
 };
