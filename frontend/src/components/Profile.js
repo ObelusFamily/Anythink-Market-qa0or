@@ -31,7 +31,11 @@ const FollowUserButton = (props) => {
 
   let classes = "btn btn-sm action-btn";
   classes += " btn-secondary";
- 
+  if (props.user.following) {
+    classes += " btn-secondary";
+  } else {
+    classes += " btn-outline-secondary";
+  }
 
   const handleClick = (ev) => {
     ev.preventDefault();
